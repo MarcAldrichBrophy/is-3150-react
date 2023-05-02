@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles/maincss/style.css';
+import './utilities/downloadHandler.js';
 import imageFile from './imgs/warehouse.jpg';
 import productCount from '../variables';
 

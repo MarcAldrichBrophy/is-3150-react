@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles/css/style.css';
+import './utilities/gatewayHandler.js';
 
 function Page(props) {
   return (
