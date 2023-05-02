@@ -4,7 +4,7 @@ import './utilities/gatewayHandler.js';
 
 function Page(props) {
   return (
-    <div className="productDiv">
+    <div id="productDiv">
 
       <div id="titleDiv">
         <h1>Product Cataloger</h1>

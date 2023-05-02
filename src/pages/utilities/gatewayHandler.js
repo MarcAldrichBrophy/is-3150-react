@@ -11,12 +11,12 @@ function loadPage() {
     HTTP.send();
     
     HTTP.onreadystatechange = function() {
-        if(this.readyState == 4 && this.status == 200) {
+        if(this.readyState === 4 && this.status === 200) {
             const data = HTTP.responseText;
             const jsonData = JSON.parse(data);
             document.getElementById("dataAmount").textContent = "Quantity in database: " + jsonData.qty;
         }
-        else if(this.readyState == 4 && this.status != 200) {
+        else if(this.readyState === 4 && this.status !== 200) {
             document.getElementById("dataAmount").textContent = "Quantity in database: None";
         }
     }
@@ -35,11 +35,11 @@ function loadPage() {
         ));
     
         postProductReq.onreadystatechange = function() {
-            if(this.readyState == 4 && this.status == 200) {
-                document.location.href = "/post.html";
+            if(this.readyState === 4 && this.status === 200) {
+                document.location.href = "/post";
             }
-            else if(this.readyState == 4 && this.status != 200) {
-                document.location.href = "/postError.html";
+            else if(this.readyState === 4 && this.status !== 200) {
+                document.location.href = "/postError";
             }
         }
     }
@@ -58,7 +58,7 @@ function loadPage() {
         getProdReq.onreadystatechange = function() {
             let total = Number(document.getElementById("inputVal").value);
     
-            if(this.readyState == 4 && this.status == 200) {
+            if(this.readyState === 4 && this.status === 200) {
                
                 const data = getProdReq.responseText;
                 const jsonData = JSON.parse(data);
@@ -67,7 +67,7 @@ function loadPage() {
                     total = total + parseInt(jsonData.qty);
                 }
                 else if(parseInt(jsonData.qty) && !Number.isInteger(total)) { // Invalid input, good data.
-                    document.location.href = "/postError.html";
+                    document.location.href = "/postError";
                     return;
                     // total = parseInt(jsonData.qty);
                 }
@@ -75,14 +75,14 @@ function loadPage() {
                     console.log("Good to use total.");
                 }
                 else {
-                    document.location.href = "/postError.html";
+                    document.location.href = "/postError";
                     return;
                 }
     
     
                 productPost(total);
             }
-            else if(this.readyState == 4 && this.status == 404) {
+            else if(this.readyState === 4 && this.status === 404) {
                 console.log("Posting 404");
                 productPost(total);
             }
@@ -104,8 +104,13 @@ function loadPage() {
     
 }
 
-if(document.getElementsByClassName("productDiv")) {
-    loadPage();
-} else {
-    console.log("Div not found.");
+function checkPage() {
+    if(document.getElementById("productDiv")) {
+        console.log("Div found." + window.location);
+        loadPage();
+    } else {
+        console.log("div not found.");
+    }
 }
+
+setTimeout(checkPage, 1000);

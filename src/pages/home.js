@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles/maincss/style.css';
+
 import './utilities/downloadHandler.js';
 import imageFile from './imgs/warehouse.jpg';
 import productCount from '../variables';
@@ -15,6 +16,9 @@ function HomePage() {
 
     return (
       <div className="mainDiv">
+        {/* <Helmet>
+            <script type='text/javascript' src='./utilities/downloadHandler.js'></script>
+        </Helmet> */}
         <div id="mainHeader">
             <h1>IS-3150 Warehouse</h1>
         </div>

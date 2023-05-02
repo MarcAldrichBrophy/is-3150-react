@@ -40,7 +40,7 @@ function downloadCSV() {
     HTTP.send();
 
     HTTP.onreadystatechange = function() {
-        if(this.readyState == 4 && this.status == 200) {
+        if(this.readyState === 4 && this.status === 200) {
             const data = HTTP.responseText;
             const jsonData = JSON.parse(data);
             const csvdata = csvmaker(jsonData.products);
