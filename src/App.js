@@ -1,41 +1,18 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Page from './pages/product';
+import HomePage from './pages/home';
+import productCount from './variables';
 
 function App() {
-  const pages = [
-    // {
-    //   id: 1,
-    //   title: 'Page 1',
-    //   content: 'This is the content for page 1.',
-    // },
-    // {
-    //   id: 2,
-    //   title: 'Page 2',
-    //   content: 'This is the content for page 2.',
-    // },
-    // {
-    //   id: 3,
-    //   title: 'Page 3',
-    //   content: 'This is the content for page 3.',
-    // },
-    // {
-    //   id: 4,
-    //   title: 'Page 4',
-    //   content: 'This is the content for page 4.',
-    // },
-    // {
-    //   id: 5,s
-    //   title: 'Page 5',
-    //   content: 'This is the content for page 5.',
-    // },
-  ];
+  const desiredProducts = productCount;
+  let pages = [];
 
-  for (let pageNum = 1; pageNum <= 10; pageNum++) {
+  for (let productNum = 1; productNum <= desiredProducts; productNum++) {
     pages.push({
-      id: pageNum,
-      title: "Page " + pageNum,
-      content: "This is content for page " + pageNum
+      id: productNum,
+      title: "Product " + productNum,
+      content: "Product content."
     });
   }
 
@@ -45,6 +22,7 @@ function App() {
         {pages.map((page) => (
           <Route path={`/${page.id}`} key={page.id} element={<Page title={page.title} content={page.content} />} />
         ))}
+        <Route path="/home" element={<HomePage/>}/>
       </Routes>
     </BrowserRouter>
   );

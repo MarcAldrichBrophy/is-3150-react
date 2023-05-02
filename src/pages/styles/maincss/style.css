@@ -1,0 +1,77 @@
+.mainDiv * {
+  margin: 0px;
+  padding: 0px;
+}
+.mainDiv body {
+  background: #1d1d1d;
+  height: 100vh;
+}
+.mainDiv #mainHeader {
+  width: 100vw;
+  height: 10vh;
+  text-align: center;
+  position: absolute;
+  z-index: 10;
+  font-size: 2em;
+  top: 5vh;
+}
+.mainDiv #itemList {
+  display: grid;
+  grid-template-columns: repeat(3, 3fr);
+  gap: 10px;
+  overflow: auto;
+  max-height: 40vh;
+  position: absolute;
+  z-index: 10;
+  width: 90vw;
+  left: 5vw;
+  top: 30vh;
+}
+.mainDiv #itemList a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  color: white;
+  font-size: 1em;
+  background-color: black;
+}
+.mainDiv #itemList h2 {
+  margin-left: 5vw;
+  margin-right: 5vw;
+}
+.mainDiv #backgroundImage {
+  position: absolute;
+  filter: blur(8px);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.mainDiv #backgroundImage img {
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+.mainDiv button {
+  position: absolute;
+  width: 80vw;
+  height: 100px;
+  cursor: pointer;
+  font-size: 40px;
+  background-color: rgb(129, 129, 255);
+  z-index: 20;
+  left: 50vw;
+  bottom: 3vh;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-size: 2em;
+}
+.mainDiv .productButton {
+  border-radius: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+}/*# sourceMappingURL=style.css.map */
