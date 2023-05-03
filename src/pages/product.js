@@ -19,7 +19,7 @@ function Page(props) {
           <button id="submitButton">Submit</button>
       </div>
 
-      <a href="/home" id="homeButton">home</a>
+      <a href="/" id="homeButton">home</a>
     </div>
   );
 }

@@ -27,7 +27,7 @@ function App() {
           <Route path={`/${page.id}`} key={page.id} element={<Page title={page.title} content={page.content} />} />
         ))}
         <Route path="/" element={<HomePage/>}/>
-        <Route path="/home" element={<HomePage/>}/>
+        {/* <Route path="/home" element={<HomePage/>}/> */}
         <Route path="/post" element={<PostPage/>}/>
         <Route path="/postError" element={<PostErrorPage/>}/>
       </Routes>
