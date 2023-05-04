@@ -45,7 +45,7 @@ function loadPage() {
     }
     
 
-    function getResult(total) {
+    function getResult(total, getProdReq) {
         if(this.readyState === 4 && this.status === 200) {
                
             const data = getProdReq.responseText;
@@ -86,7 +86,7 @@ function loadPage() {
         // Waits for request to process.
         getProdReq.onreadystatechange = function() {
             let total = Number(document.getElementById("inputVal").value);
-            getResult(total);
+            getResult(total, getProdReq);
         }
     }
     document.getElementById("submitButton").onclick = function() {submitClick()};
@@ -101,8 +101,6 @@ function loadPage() {
           window.location.reload();
         }
       });
-      
-    
 }
 
 function checkPage() {

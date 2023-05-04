@@ -11,13 +11,15 @@
   font-family: "Courier New", Courier, monospace;
   text-align: center;
   width: 100vw;
+  top: 1vh;
 }
 #productDiv #titleDiv h1 {
-  font-size: 4em;
-  color: white;
+  font-size: 3em;
+  color: rgb(68, 68, 68);
 }
 #productDiv #titleDiv h2 {
-  font-size: 3em;
+  margin-top: 5px;
+  font-size: 2em;
   color: rgb(139, 29, 29);
 }
 #productDiv #form {
