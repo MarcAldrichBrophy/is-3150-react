@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+# IS-3150 Warehouse
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Project Problem & Overview
 
-In the project directory, you can run:
+In my informations systems class, the final project of simulating a business using excel
+felt very far from realistic. In the project, the entire class in involved. There's a number of teams that get excel spreadsheets to work together, one of them being inventory management. I thought
+it would be awesome for that team to be able to scan NFC tags to simulate warehouse scanning, and
+my professor agreed.
 
-### `npm start`
+## Project Design
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The main development goal was to create a website deployed onto AWS, connected to an AWS database, and
+use a web interface to populate a noSQL table.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The first iteration used the classic HTML/CSS/JS front-end stack, and was later changed to React
+in order to be able to dynamically change the amount of items being used in the warehouse.
 
-### `npm test`
+The react app utilizes JavaScript in order to invoke API requests to AWS using API Gateway, using Lambda
+as a serverless backend. You can see the Lambda code written in Python [here](https://github.com/MarcAldrichBrophy/IS-3150-Lambda).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The Lambda code reads and writes to a table using DynamoDB on AWS, and is invoked by GET requests to
+display current table amounts, and also by user input and interaction.
 
-### `npm run build`
+## Project Deployment
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+When the code is pushed onto the master branch, an AWS CodePipeline is invoked, deploying the project
+into an Elastic Beanstalk environment on AWS. The app from here gets placed onto an EC2 instance, ready
+to be consumed on a website.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+View the demo page [here](https://3150warehouse.com).
