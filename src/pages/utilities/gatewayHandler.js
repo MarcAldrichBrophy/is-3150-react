@@ -46,7 +46,12 @@ function loadPage() {
     
 
     function getResult(total, getProdReq) {
-        if(this.readyState === 4 && this.status === 200) {
+        if(!Number.isInteger(total)) {
+            console.log("invalid input.");
+            document.location.href = "/postError";
+            return;
+        }
+        if(getProdReq.readyState === 4 && getProdReq.status === 200) {
                
             const data = getProdReq.responseText;
             const jsonData = JSON.parse(data);
@@ -54,21 +59,9 @@ function loadPage() {
             if(parseInt(jsonData.qty) && Number.isInteger(total)) { //  Good input, good data.
                 total = total + parseInt(jsonData.qty);
             }
-            else if(parseInt(jsonData.qty) && !Number.isInteger(total)) { // Invalid input, good data.
-                document.location.href = "/postError";
-                return;
-                // total = parseInt(jsonData.qty);
-            }
-            else if(!parseInt(jsonData.qty) && Number.isInteger(total)) { // Good input, invalid data.
-                console.log("Good to use total.");
-            }
-            else {
-                document.location.href = "/postError";
-                return;
-            }
             productPost(total);
         }
-        else if(this.readyState === 4 && this.status === 404) {
+        else if(getProdReq.readyState === 4 && getProdReq.status === 404) {
             console.log("Posting 404");
             productPost(total);
         }

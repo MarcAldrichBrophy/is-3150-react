@@ -44,8 +44,8 @@
   font-size: 40px;
   margin-top: 5vh;
   border-radius: 20px;
-  color: black;
-  background-color: rgb(135, 135, 245);
+  color: rgb(255, 255, 255);
+  background-color: #1d6f42;
 }
 #productDiv #dataAmount {
   text-align: center;
@@ -61,8 +61,8 @@
   left: 50vw;
   transform: translate(-50%, -50%);
   font-size: 100px;
-  background-color: rgb(190, 190, 190);
-  color: black;
+  background-color: rgb(37, 37, 37);
+  color: rgb(255, 252, 252);
   text-decoration: none;
   width: 50vw;
   text-align: center;
