@@ -1,7 +1,6 @@
 #!/bin/bash
 sudo su
 cd /var/app/current
-
 if [ ! -e "./node_modules" ]; then
   echo "ADDING FILE, DNE"
   mkdir node_modules

@@ -1,5 +1,5 @@
 container_commands:
   01_chmod1:
-    command: "chmod +x .platform/hooks/predeploy/custom-predeploy-script.sh"
+    command: "chmod +x .platform/hooks/predeploy/custom-postdeploy-script.sh"
   02_chmod2:
     command: "chmod +x .platform/hooks/prebuild/custom-prebuild-script.sh"
