@@ -11,6 +11,7 @@
     }
 
     #mainHeader {
+        color: rgb(255, 255, 255);
         width: 100vw;
         height: 10vh;
         text-align: center;
@@ -33,8 +34,12 @@
         left: 5vw;
         top: 30vh;
 
+        
+        
+
         a {
-            display: flex;
+            display: none;
+            // display: flex;
             justify-content: center;
             align-items: center;
 
@@ -44,6 +49,10 @@
             font-size: 1em;
             background-color: black;
         }
+
+        // :first-child {
+        //     display: flex;
+        // }
         h2 {
             margin-left: 5vw;
             margin-right: 5vw;
@@ -53,7 +62,7 @@
 
     #backgroundImage { 
         position: absolute;
-        filter: blur(8px);
+        filter: blur(3px);
         height: 100vh;
         width: 100vw;
 

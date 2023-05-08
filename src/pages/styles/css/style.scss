@@ -5,10 +5,8 @@
         padding: 0px;
     }
 
-    body {
-        background: #929292;
-        height: 100vh;
-    }
+    background-color: #121212;
+    height: 100vh;
 
 
     #titleDiv {
@@ -20,7 +18,7 @@
         // margin-top: 5px;
         h1 {
             font-size: 3em;
-            color: rgb(68, 68, 68);
+            color: rgb(255, 255, 255);
         }
         h2 {
             margin-top: 5px;
@@ -38,6 +36,7 @@
         left: 50vw;
         width: 50vw;
         height: 50vh;
+        color: white;
 
         #inputVal {
             height: 50px;
@@ -64,6 +63,7 @@
         left: 0vw;
         font-size: 45px;
         width: 100vw;
+        color: white;
     }
 
     #homeButton {

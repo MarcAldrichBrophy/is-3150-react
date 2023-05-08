@@ -2,7 +2,9 @@ import React from 'react';
 import './styles/maincss/style.css';
 
 import './utilities/downloadHandler.js';
-import imageFile from './imgs/warehouse.jpg';
+import './utilities/buttonLoader.js';
+
+import imageFile from './imgs/warehouse2.jpg';
 import productCount from '../variables';
 
 function HomePage() {

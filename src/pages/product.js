@@ -14,7 +14,7 @@ function Page(props) {
       <h3 id="dataAmount">Quantity in database: loading...</h3>
 
       <div id="form">
-          <label for="fname">Quantity:</label><br></br>
+          <label htmlFor="fname">Quantity:</label><br></br>
           <input type="text" id="inputVal" name="fname"></input><br></br>
           <button id="submitButton">Submit</button>
       </div>
