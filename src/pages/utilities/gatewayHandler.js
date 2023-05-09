@@ -17,7 +17,7 @@ function loadPage() {
             document.getElementById("dataAmount").textContent = "Quantity in database: " + jsonData.qty;
         }
         else if(this.readyState === 4 && this.status !== 200) {
-            document.getElementById("dataAmount").textContent = "Quantity in database: None";
+            document.getElementById("dataAmount").textContent = "Quantity in database: 0";
         }
     }
     
