@@ -29,7 +29,6 @@ const csvmaker = function (data) {
 }
 
 function downloadCSV() {
-    
     const productsURL = "https://7ofe4vwhj7.execute-api.us-west-2.amazonaws.com/prod/products";
     const HTTP = new XMLHttpRequest();
     HTTP.open("GET", productsURL);
