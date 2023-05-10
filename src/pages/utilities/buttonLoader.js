@@ -1,7 +1,7 @@
 import $ from 'jquery';
 
 const fadeDelay = 100
-$(document).ready(function() {
+window.onload = function() {
     if(document.getElementById("itemList")) {
         console.log("Found list.");
         var items = $('#itemList a');
@@ -18,4 +18,4 @@ $(document).ready(function() {
         
         showNextItem();
     }
-});
+}
