@@ -11,8 +11,16 @@ function HomePage() {
 
     let buttons = [];
     for(let bNum = 1; bNum <= productCount; bNum++) {
+
+        let productString = "p";
+        let numLen = 4 - String(bNum).length;
+        for(let i = 0; i < numLen; i++) {
+            productString += "0"
+        }
+        productString += String(bNum);
+
         buttons.push({
-            id: bNum
+            id: productString
         })
     }
 
@@ -26,7 +34,7 @@ function HomePage() {
         <div id="itemList">
             {buttons.map((button) => (
                 <a className="productButton" href={"./" + button.id} key={button.id}>
-                    Product{button.id}
+                    {button.id}
                 </a>
             ))}
         </div>

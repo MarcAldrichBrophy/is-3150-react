@@ -7,7 +7,7 @@ $(document).ready(function() {
         var index = 0;
         
         function showNextItem() {
-            console.log(index);
+            // console.log(index);
             $(items[index]).fadeIn(100);
             $(items[index]).css('text-align', 'center');
             index++;

@@ -26,7 +26,14 @@ function loadPage() {
         const postProductReq = new XMLHttpRequest();
         postProductReq.open("POST", productStore);
         postProductReq.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    
+        
+        // let productString = "p"
+        // let numLen = 4 - productNumber.length
+        // for(let i = 0; i < numLen; i++) {
+        //     productString += "0"
+        // }
+        // productString += productNumber
+
         postProductReq.send(JSON.stringify(
             {
                 "productId": productNumber, 

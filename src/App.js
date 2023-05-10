@@ -11,11 +11,21 @@ import productCount from './variables';
 function App() {
   const desiredProducts = productCount;
   let pages = [];
+  
 
   for (let productNum = 1; productNum <= desiredProducts; productNum++) {
+
+    let productString = "p";
+    let numLen = 4 - String(productNum).length;
+    for(let i = 0; i < numLen; i++) {
+        productString += "0"
+    }
+    productString += String(productNum);
+    
     pages.push({
       id: productNum,
-      title: "Product " + productNum,
+      productId: productString,
+      title: "Product: " + productString,
       content: "Product content."
     });
   }
@@ -24,7 +34,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         {pages.map((page) => (
-          <Route path={`/${page.id}`} key={page.id} element={<Page title={page.title} content={page.content} />} />
+          <Route path={`/${page.productId}`} key={page.id} element={<Page title={page.title} content={page.content} />} />
         ))}
         <Route path="/" element={<HomePage/>}/>
         {/* <Route path="/home" element={<HomePage/>}/> */}
