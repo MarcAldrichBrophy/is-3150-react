@@ -65,6 +65,9 @@ function loadPage() {
 
             if(parseInt(jsonData.qty) && Number.isInteger(total)) { //  Good input, good data.
                 total = total + parseInt(jsonData.qty);
+                if(total < 0) {
+                    total = 0;
+                }
             }
             productPost(total);
         }

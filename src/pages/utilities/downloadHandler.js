@@ -14,16 +14,23 @@ const download = function (data) {
 
 const csvmaker = function (data) {
     console.log("Creating CSV...");
+    
+
+    data.forEach(function(item) {
+        if(item.qty == 0) {
+            data.splice(data.indexOf(item), 1);
+        }
+    });
+    console.log(data);
 
     const csvString = [
         [
           "Product ID",
           "Quantity"
         ],
-        ...data.map(item => [
-          item.productId,
-          item.qty
-        ])
+        ...data
+        .filter(item => item.qty > 0)
+        .map(item => [item.productId, item.qty])
       ]
        .map(e => e.join(",")) 
        .join("\n");
