@@ -2,7 +2,7 @@
 function loadPage() {
     const path = window.location.pathname;
     const page = path.split("/").pop();
-    const productNumber = page.match(/\d+/)[0];
+    const productNumber = page.match(/\w\d+/)[0];
     
     // Gets data based on page viewed.
     const prodVal = "https://7ofe4vwhj7.execute-api.us-west-2.amazonaws.com/prod/product?productId=" + productNumber;
