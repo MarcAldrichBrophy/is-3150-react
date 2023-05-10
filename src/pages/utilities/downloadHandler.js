@@ -14,14 +14,6 @@ const download = function (data) {
 
 const csvmaker = function (data) {
     console.log("Creating CSV...");
-    
-
-    data.forEach(function(item) {
-        if(item.qty == 0) {
-            data.splice(data.indexOf(item), 1);
-        }
-    });
-    console.log(data);
 
     const csvString = [
         [
@@ -39,7 +31,7 @@ const csvmaker = function (data) {
 }
 
 function downloadCSV() {
-    console.log("Downloading...");
+    
     const productsURL = "https://7ofe4vwhj7.execute-api.us-west-2.amazonaws.com/prod/products";
 
     const HTTP = new XMLHttpRequest();

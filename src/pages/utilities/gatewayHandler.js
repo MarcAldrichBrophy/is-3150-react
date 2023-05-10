@@ -27,13 +27,6 @@ function loadPage() {
         postProductReq.open("POST", productStore);
         postProductReq.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         
-        // let productString = "p"
-        // let numLen = 4 - productNumber.length
-        // for(let i = 0; i < numLen; i++) {
-        //     productString += "0"
-        // }
-        // productString += productNumber
-
         postProductReq.send(JSON.stringify(
             {
                 "productId": productNumber, 
@@ -54,7 +47,6 @@ function loadPage() {
 
     function getResult(total, getProdReq) {
         if(!Number.isInteger(total)) {
-            console.log("invalid input.");
             document.location.href = "/postError";
             return;
         }
@@ -77,16 +69,12 @@ function loadPage() {
         }
     }
     
-    // Function grabs product data, then adds to requested amount.
     function submitClick() {
-        console.log("attempting to post.");
-        // Get request to obtain data of specified product.
         const getProdReq = new XMLHttpRequest();
         getProdReq.open("GET", prodVal);
         getProdReq.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         getProdReq.send();
     
-        // Waits for request to process.
         getProdReq.onreadystatechange = function() {
             let total = Number(document.getElementById("inputVal").value);
             getResult(total, getProdReq);
@@ -95,12 +83,11 @@ function loadPage() {
     document.getElementById("submitButton").onclick = function() {submitClick()};
     
     // Refresh history traversal.
-    window.addEventListener( "pageshow", function ( event ) {
+    window.addEventListener("pageshow", function ( event ) {
         var historyTraversal = event.persisted || 
             ( typeof window.performance != "undefined" && 
                 window.performance.navigation.type === 2 );
         if ( historyTraversal ) {
-          // Handle page restore.
           window.location.reload();
         }
       });
@@ -110,9 +97,6 @@ function checkPage() {
     if(document.getElementById("productDiv")) {
         console.log("Div found." + window.location);
         loadPage();
-    } else {
-        console.log("div not found.");
     }
 }
-
 setTimeout(checkPage, 1000);
