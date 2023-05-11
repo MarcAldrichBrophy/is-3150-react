@@ -44,8 +44,10 @@ function downloadCSV() {
     }
 }
 
-window.onload = function() {
+function checkPage() {
     if(document.getElementById("downloadButton")) {
+        console.log("Button click");
         document.getElementById("downloadButton").onclick = function() {downloadCSV()};
     }
 }
+setTimeout(checkPage, 1000);
