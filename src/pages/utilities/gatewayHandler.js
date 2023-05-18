@@ -1,4 +1,5 @@
 
+
 function loadPage() {
     const path = window.location.pathname;
     const page = path.split("/").pop();
@@ -22,6 +23,7 @@ function loadPage() {
     }
     
     function productPost(total) {
+        
         const productStore = "https://7ofe4vwhj7.execute-api.us-west-2.amazonaws.com/prod/product";
         const postProductReq = new XMLHttpRequest();
         postProductReq.open("POST", productStore);
@@ -31,7 +33,7 @@ function loadPage() {
             {
                 "productId": productNumber, 
                 "qty": total
-            } 
+            }
         ));
     
         postProductReq.onreadystatechange = function() {
