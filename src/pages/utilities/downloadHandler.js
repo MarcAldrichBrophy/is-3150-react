@@ -44,10 +44,26 @@ function downloadCSV() {
     }
 }
 
+function deleteDatabase() {
+    const productsURL = "https://7ofe4vwhj7.execute-api.us-west-2.amazonaws.com/prod/products";
+    const HTTP = new XMLHttpRequest();
+    HTTP.open("DELETE", productsURL);
+    HTTP.send();
+
+    HTTP.onreadystatechange = function() {
+        if(this.readyState === 4 && this.status === 200) {
+            console.log("Database deleted.");
+        }
+    }
+}
+
 function checkPage() {
     if(document.getElementById("downloadButton")) {
-        console.log("Button click");
         document.getElementById("downloadButton").onclick = function() {downloadCSV()};
+        document.getElementById("downloadAndDump").onclick = function() {
+            downloadCSV();
+            deleteDatabase();
+        }
     }
 }
 setTimeout(checkPage, 1000);

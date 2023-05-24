@@ -39,7 +39,9 @@ function HomePage() {
             ))}
         </div>
 
+        <button id="downloadAndDump">Download CSV and Delete Database</button>
         <button id="downloadButton">Download Database as CSV</button>
+        
 
         <div id="backgroundImage">
             <img src={imageFile} draggable="false"  alt=""/>

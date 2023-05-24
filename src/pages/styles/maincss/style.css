@@ -59,17 +59,22 @@
 }
 .mainDiv button {
   position: absolute;
-  width: 80vw;
+  width: 40vw;
   height: 100px;
   cursor: pointer;
   font-size: 40px;
   background-color: #1d6f42;
   z-index: 20;
-  left: 50vw;
   bottom: 3vh;
   transform: translate(-50%, -50%);
   color: black;
   font-size: 2em;
+}
+.mainDiv #downloadButton {
+  left: 75vw;
+}
+.mainDiv #downloadAndDump {
+  left: 25vw;
 }
 .mainDiv .productButton {
   border-radius: 20px;

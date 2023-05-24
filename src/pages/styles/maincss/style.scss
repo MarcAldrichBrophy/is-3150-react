@@ -50,9 +50,6 @@
             background-color: black;
         }
 
-        // :first-child {
-        //     display: flex;
-        // }
         h2 {
             margin-left: 5vw;
             margin-right: 5vw;
@@ -81,18 +78,25 @@
 
     button {
         position: absolute;
-        width: 80vw;
+        width: 40vw;
         height: 100px;
         cursor: pointer;
         font-size: 40px;
         background-color: #1d6f42;
         z-index: 20;
-        left: 50vw;
-        // top: 90vh;
         bottom: 3vh;
         transform: translate(-50%, -50%);
         color: black;
         font-size: 2em;
+    }
+
+    #downloadButton {
+        // bottom: 3vh;
+        left: 75vw;
+    }
+    #downloadAndDump {
+        // bottom: 1vh;
+        left: 25vw;
     }
 
     .productButton {
